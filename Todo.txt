@@ -1,0 +1,22 @@
+backend --------------------------------------------------------------------------
+TODO: Google Oauth SignUp, SignIn and SignOut.
+DONE: SignIn route to redirect client if a valid token already exists.
+DONE: Route protection helper function.
+TODO: User history mongoose model and route.
+TODO: Sift through gemini sample response to know what to send to the user
+  history database.
+DONE: Find out how to read the response from gemini API in stream instead of
+  at once.
+TODO: Determine the image generation route before the user history route.
+TODO: Create the files upload route.
+TODO: Create a change password route.
+TODO: Create a delete account route.
+
+frontend --------------------------------------------------------------------------
+
+---Dev testing changes to be reversed---------------------------------
+TODO: The SignIn route should not include the JWT in the response body.
+TODO: Uncomment the following:
+  "authorize()" in the "generate()" route controller.
+  "connectMongodb()" and "connectRedis()" in server.js.
+----------------------------------------------------------------------

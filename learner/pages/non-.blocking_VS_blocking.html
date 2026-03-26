@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../public/settings.png">
+  <title>Concepts Clarifications</title>
+  <style>
+    body {
+      background: rgb(46, 52, 65);
+      box-sizing: border-box;
+    }
+    .main {
+      background: rgb(46, 52, 65);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 99vh;
+      flex-direction: column;
+    }
+    .main-counter {
+      font-size: 200px;
+      font-family: monospace;
+      cursor: pointer;
+    }
+    .main-counter:hover {
+      background: rgba(255, 255, 255, 0.089);
+      padding: 0px 60px;
+      border-radius: 10px;
+    }
+    .main-control {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      height: 42px;
+    }
+    .main-control > input, .main-control > button {
+      border: 1.5px solid rgb(255, 255, 255);
+      border-radius: 4px;
+      background: rgb(35, 40, 49);
+      color: white;
+      font-size: 24px;
+      max-width: 160px;
+      font-family: 'Courier New', Courier, monospace;
+      letter-spacing: 0px;
+      text-align: center;
+    }
+    .main-control > button {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main class="main">
+    <div class="main-counter">0</div>
+    <div class="main-control">
+      <input type="text" placeholder="Number">
+      <button>Accept</button>
+    </div>
+  </main>
+</body>
+<script>
+  let tick = 1
+  const [countHtml, tickHtml, startCountHtml] = (function (...selectors) {
+    const nodes = [];
+    for (const selector of selectors)
+      nodes.push(document.querySelector(selector));
+    return nodes;
+  })(
+    ".main-counter",
+    ".main-control > input",
+    ".main-control > button",
+  );
+
+  let intervalId = setInterval(() => {
+    countHtml.innerText = Number(countHtml.innerText) + 1
+  }, tick * 1000)
+
+  startCountHtml.addEventListener('click', () => {
+    if (intervalId) clearInterval(intervalId)
+    tick = Number(tickHtml.value) || 1
+    intervalId = setInterval(() => {
+      countHtml.innerText = Number(countHtml.innerText) + 1
+    }, tick * 1000)
+  })
+
+  countHtml.addEventListener('click', () => {
+    countHtml.innerText = 0
+  })
+</script>
+</html>

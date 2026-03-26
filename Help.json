@@ -1,0 +1,14 @@
+{
+  "Errors": {
+    "SignUpError": {
+      "why": ["WeakPassword", "MissingFeild"]
+    },
+    "SignInError": {
+      "why": ["MissingFeild", "InvalidCredentials"]
+    }
+  },
+
+  "eienzenai/auth/sign-up": {
+    "expects" : ""
+  }
+}

@@ -1,0 +1,9 @@
+1. The response will be streamed gradually to the frontend server that requested it.
+   But we obviously know that text parts will be handled completely by the frontend,
+   though I am wondering if the image part should be saved else where with only the
+   resulting URL being passed to the frontend. How I choose to handle this will
+   affect how user history is saved.
+2. At the end of this conversation with GPT (https://chatgpt.com/g/g-p-6915ed81f4008191a3db6853f7c095cf/c/6964dee1-cb40-832a-a80d-610cf7f9b9c2), it talked about making uploads
+   "stream-safe" and also about file upload progress, check that out.
+3. Create a documentation for all the routes, i.e, What each route expects, and what
+   they return.
